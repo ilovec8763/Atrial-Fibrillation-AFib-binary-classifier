@@ -10,7 +10,7 @@ import wfdb
 
 ###### 主程式碼 poincare plot #######
 def plot_poincare(rr):
-    #Credit : BJORN (in Kaggle) 
+    #Credit : BJORN (in Kaggle) https://www.kaggle.com/code/bjoernjostein/heart-rate-variability-hrv-analysis
     rr_n = rr[:-1] #第0個元素到倒數第2個元素
     rr_n1 = rr[1:] #第1個元素到倒數第1(最後一個)個元素
 
