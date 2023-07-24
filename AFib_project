@@ -101,14 +101,14 @@ def poincare_clustering_3(rr,epslion,num_of__min_samples):
     
     db = DBSCAN(eps=epslion, min_samples=num_of__min_samples).fit(X)  #eps=100, min_samples=10
     labels = db.labels_
-    """暫時
+    """印出labels的部分，暫時註解掉
     print("labels = ",labels)
     print("type(labels)=",type(labels))
     暫時"""
     # Number of clusters in labels, ignoring noise if present.
     n_clusters_ = len(set(labels)) - (1 if -1 in labels else 0)
     n_noise_ = list(labels).count(-1)
-    """暫時
+    """繪圖部分，暫時先註解掉
     print("Estimated number of clusters: %d" % n_clusters_)
     print("Estimated number of noise points: %d" % n_noise_)
     print("X = ", X)
