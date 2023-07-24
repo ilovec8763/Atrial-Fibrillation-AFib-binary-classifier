@@ -251,7 +251,6 @@ from sklearn.model_selection import train_test_split
 
 
 # import some data to play with
-iris = datasets.load_iris()
 X = paf_features.values[:,:3] #training set
 y = paf_features.values[:,3] #labels
 class_names = ["Normal","AFib"] #string array, ["species 1", "species 2", "species 3", ...]
@@ -331,4 +330,3 @@ print("grid.best_estimator_ is ",grid.best_estimator_)
 print("grid.best_score_ = ",grid.best_score_)
 grid_predictions = grid.predict(X_test)
 print("grid_predictions = ",grid_predictions)
-
