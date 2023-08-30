@@ -8,7 +8,7 @@
 1. 將一段30分鐘的ECG做預處理、透過neurokit內建的peak dection algorithm取得它的心律變異性(Heart rate variability, HRV)。
 2. 將HRV畫成Poincare plot可以看見清晰的分群。
 3. 使用DBSCAN分群算法計算分群數量(群的尺度大小參考自[2])，另外再計算Poincare plot的統計量，獲得4 dimensions featue values。
-4. 透過CatBoostClassfier 對 featue values做learning。 
+4. 透過CatBoostClassfier 對 featue values做ensemble learning。 
 
 # Dataset
 我在這裡使用PAF Prediction Challenge Database ，這是一個由Computing in Cardiology conference 為了其2001發起的挑戰而構建的database，這個挑戰的目標是開發預測陣發性心房顫動 (PAF) 的自動化方法。
