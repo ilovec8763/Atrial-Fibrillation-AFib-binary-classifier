@@ -29,6 +29,8 @@ Recall : 80%.
 
 F1-score : 85.5%.
 
+Accuracy : 84%.
+
 # Pictures for demonstration
 
 ## Dataset distribution
