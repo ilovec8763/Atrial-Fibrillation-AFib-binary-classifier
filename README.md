@@ -20,6 +20,17 @@
 
 PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0/
 
+# Result
+Let AFib = Positive, Normal = Negative.
+
+Precision : 92%.
+
+Recall : 80%.
+
+F1-score : 85.5%.
+
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
+
 # Pictures for demonstration
 
 ## Dataset distribution
@@ -46,16 +57,7 @@ PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Non_normalized_cm_catbosst.png)
-# Result
-Let AFib = Positive, Normal = Negative.
 
-Precision : 92%.
-
-Recall : 80%.
-
-F1-score : 85.5%.
-
-![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 
 
 # Reference
