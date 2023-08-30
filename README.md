@@ -29,8 +29,6 @@ Recall : 80%.
 
 F1-score : 85.5%.
 
-![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
-
 # Pictures for demonstration
 
 ## Dataset distribution
