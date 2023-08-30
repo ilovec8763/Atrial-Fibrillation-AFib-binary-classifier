@@ -12,6 +12,22 @@
 
 # Dataset
 PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0/
+# Pictures for demonstration
+
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/n10_%E6%AD%A3%E5%B8%B8%E6%83%85%E5%BD%A2_ECG.png)
+
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
+
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
+
+
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 # Result
 Let AFib = Positive, Normal = Negative.
 
