@@ -28,6 +28,7 @@ PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Non_normalized_cm_catbosst.png)
 # Result
 Let AFib = Positive, Normal = Negative.
 
