@@ -5,7 +5,7 @@
 這個專案引用了這篇論文[1]的特徵工程方法，並根據實際情況做出了一定幅度的修改，目的在於增加分類器的穩健性(Robustness)及可解釋性(Interpretability)。
 
 演算流程:
-1. 將一段30分鐘的ECG做預處哩、透過neurokit內建的peak dection algorithm取得它的心律變異性(Heart rate variability, HRV)。
+1. 將一段30分鐘的ECG做預處理、透過neurokit內建的peak dection algorithm取得它的心律變異性(Heart rate variability, HRV)。
 2. 將HRV畫成Poincare plot可以看見清晰的分群。
 3. 使用DBSCAN分群算法計算分群數量(群的尺度大小參考自[2])，另外再計算Poincare plot的統計量，獲得4 dimensions featue values。
 4. 透過CatBoostClassfier 對 featue values做learning。 
