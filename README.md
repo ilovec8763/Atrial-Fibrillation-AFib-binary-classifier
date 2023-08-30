@@ -16,7 +16,7 @@
 該database分為學習集（名稱格式為 n *和 p *的記錄）和測試集（名稱格式為 t *的記錄）。此database中含有100組30分鐘的含標籤的ECG片段，一半包含AFib訊號(p)，一半是正常訊號(n)。
 另外還有不含標籤的測試集紀錄以及AFib發作後5分鐘的ECG訊號(以c做開頭)，這裡我們不會用到。
 
-若想知道更詳細的資訊可至physio.net 的官網了解 
+若想知道更詳細的資訊可至physionet.org 的官網了解 
 
 PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0/
 
