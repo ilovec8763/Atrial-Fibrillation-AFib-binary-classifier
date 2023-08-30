@@ -11,7 +11,15 @@
 4. 透過CatBoostClassfier 對 featue values做learning。 
 
 # Dataset
+我在這裡使用PAF Prediction Challenge Database ，這是一個由Computing in Cardiology conference 為了其2001發起的挑戰而構建的database，這個挑戰的目標是開發預測陣發性心房顫動 (PAF) 的自動化方法。
+
+該database分為學習集（名稱格式為 n *和 p *的記錄）和測試集（名稱格式為 t *的記錄）。此database中含有100組30分鐘的含標籤的ECG片段，一半包含AFib訊號(p)，一半是正常訊號(n)。
+另外還有不含標籤的測試集紀錄以及AFib發作後5分鐘的ECG訊號(以c做開頭)，這裡我們不會用到。
+
+若想知道更詳細的資訊可至physio.net 的官網了解 
+
 PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0/
+
 # Pictures for demonstration
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
