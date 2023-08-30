@@ -11,7 +11,13 @@
 4. 透過CatBoostClassfier 對 featue values做learning。 
 
 # 結果
+Let AFib = Positive, Normal = Negative.
 
+Precision : 92%.
+
+Recall : 80%.
+
+F1-score : 85.5%.
 
 [1] Park, J., Lee, S., & Jeon, M. (2009). Atrial fibrillation detection by heart rate variability in Poincare plot. Biomedical engineering online, 8(1), 1-12.
 
