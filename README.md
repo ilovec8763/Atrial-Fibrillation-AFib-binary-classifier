@@ -24,7 +24,7 @@ PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0
 
 ## Dataset distribution
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
-## Sanity check of peak dection algorithm
+## Sanity check for peak detection algorithm
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/n10_%E6%AD%A3%E5%B8%B8%E6%83%85%E5%BD%A2_ECG.png)
 ## Poincare of a normal person
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
