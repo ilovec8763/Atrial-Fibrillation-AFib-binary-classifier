@@ -29,6 +29,13 @@ PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0
 ## Poincare of a normal person
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
+
+## Distribution of number of clusters of normal people's Poincare plot
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Clusters%20of%20normal.png)
+
+## Distribution of number of clusters of AFib patients' Poincare plot 
+![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Cluster%20of%20AFib%20patients.png)
+
 ## Poincare of an AFib patient
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
