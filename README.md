@@ -10,7 +10,9 @@
 3. 使用DBSCAN分群算法計算分群數量(群的尺度大小參考自[2])，另外再計算Poincare plot的統計量，獲得4 dimensions featue values。
 4. 透過CatBoostClassfier 對 featue values做learning。 
 
-# 結果
+# Dataset
+PAF Prediction Challenge Database: https://www.physionet.org/content/afpdb/1.0.0/
+# Result
 Let AFib = Positive, Normal = Negative.
 
 Precision : 92%.
@@ -22,7 +24,7 @@ F1-score : 85.5%.
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 
 
-# 文獻參考
+# Reference
 [1] Park, J., Lee, S., & Jeon, M. (2009). Atrial fibrillation detection by heart rate variability in Poincare plot. Biomedical engineering online, 8(1), 1-12.
 
 [2] Käsmacher, H., Wiese, S., & Lahl, M. (2000). Monitoring the complexity of ventricular response in atrial fibrillation. Discrete Dynamics In Nature And Society, 4, 63-75.
