@@ -34,6 +34,7 @@ Accuracy : 84%.
 # Pictures for demonstration
 
 ## Dataset distribution
+官方提供的數據集中，AF的訊號跟正常訊號各占一半，故不用考慮imbalanced data的問題。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
 ## Sanity check for peak detection algorithm
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/n10_%E6%AD%A3%E5%B8%B8%E6%83%85%E5%BD%A2_ECG.png)
