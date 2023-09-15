@@ -38,7 +38,10 @@ Accuracy : 84%.
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
 ## Sanity check for peak detection algorithm
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/n10_%E6%AD%A3%E5%B8%B8%E6%83%85%E5%BD%A2_ECG.png)
-## Poincare of a normal person
+## Poincaré plot of a normal person
+Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一個RR間隔進行散點圖表示的方法。這個圖會呈現出一個雲狀分布，並且會沿著對角線的方向排列。雲的形狀提供了非常有用的心率變異性（HRV）描述訊息。雲的長度(SD1)對應於長期變異性的程度，而寬度(SD2)表示短期變異性[3]。
+
+圖中可看到一個正常人ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
 
@@ -48,13 +51,21 @@ Accuracy : 84%.
 ## Distribution of number of clusters of AFib patients' Poincare plot 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Cluster%20of%20AFib%20patients.png)
 
-## Poincare of an AFib patient
+## Poincaré plot of an AFib patient
+圖中可看到一個AFib病患ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
 ## Performance of SVM on feature values 
+依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM。
+
+但kmeans分群(而且是兩次)很容易受到雜訊影響，特別是當peak dection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot分群計算結果的解釋性較弱，整體缺乏魯棒性。
+
+基於特徵工程之後的features若直接使用kernel SVM學習，容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
 ## Performance of CatBoostClassifier on feature values
+為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
+如此一來，不需要使用kmeans及資料分流，也能達到略差的準確度84%(論文91.4%)及相當接近的特異度90%(論文92.9%)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Non_normalized_cm_catbosst.png)
@@ -65,3 +76,5 @@ Accuracy : 84%.
 [1] Park, J., Lee, S., & Jeon, M. (2009). Atrial fibrillation detection by heart rate variability in Poincare plot. Biomedical engineering online, 8(1), 1-12.
 
 [2] Käsmacher, H., Wiese, S., & Lahl, M. (2000). Monitoring the complexity of ventricular response in atrial fibrillation. Discrete Dynamics In Nature And Society, 4, 63-75.
+
+[3] Khandoker, A. H., Karmakar, C., Brennan, M., Palaniswami, M., & Voss, A. (2013). Poincaré plot methods for heart rate variability analysis. Boston, MA, USA: Springer US.
