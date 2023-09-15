@@ -60,7 +60,7 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 ## Performance of SVM on feature values 
 依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM。
 
-但kmeans分群(而且是兩次)很容易受到雜訊影響，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot分群計算結果的解釋性較弱，整體缺乏魯棒性。
+但kmeans分群(而且是兩次)很容易受到雜訊影響，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot分群計算結果的解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
 
 基於特徵工程之後的features若直接使用kernel SVM學習，容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
