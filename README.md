@@ -46,9 +46,11 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
 
 ## Distribution of number of clusters of normal people's Poincare plot
+正常人的 Poincaré plot 群數大多較少。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Clusters%20of%20normal.png)
 
 ## Distribution of number of clusters of AFib patients' Poincare plot 
+ AFib病人的Poincaré plot 群數明顯偏多。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Cluster%20of%20AFib%20patients.png)
 
 ## Poincaré plot of an AFib patient
@@ -65,7 +67,8 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
 ## Performance of CatBoostClassifier on feature values
 為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
-如此一來，不需要使用kmeans及資料分流，也能達到略差的準確度84%(論文91.4%)及相當接近的特異度90%(論文92.9%)
+如此一來，不需要使用kmeans及資料分流，也能達到略差的準確度84%(論文91.4%)及相當接近的特異度90%(論文92.9%)。
+
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/confusion_matrix.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Non_normalized_cm_catbosst.png)
