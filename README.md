@@ -69,6 +69,8 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 
 ## Performance of SVM on feature values 
 依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM，見下圖。
+可以看到黑色方形代表AFib患者的樣本，黑色x代表正常人的樣本，兩個群體在原作者的算法下可以稍微看到模糊的邊界。
+
 ![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/%E5%8E%9F%E8%AB%96%E6%96%87_%E5%9C%96%E7%89%87.png)
 
 但kmeans分群(而且是兩次)很容易受到雜訊影響，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot分群計算結果的解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
