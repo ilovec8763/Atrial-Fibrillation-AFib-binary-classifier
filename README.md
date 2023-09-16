@@ -36,37 +36,48 @@ Accuracy : 84%.
 ## Dataset distribution
 官方提供的數據集中，AF的訊號跟正常訊號各占一半，故不用考慮imbalanced data的問題。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/data%20balance.png)
+
 ## Sanity check for peak detection algorithm
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/n10_%E6%AD%A3%E5%B8%B8%E6%83%85%E5%BD%A2_ECG.png)
+
+
 ## Poincaré plot of a normal person
 Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一個RR間隔進行散點圖表示的方法。這個圖會呈現出一個雲狀分布，並且會沿著對角線的方向排列。雲的形狀提供了非常有用的心率變異性（HRV）描述訊息。雲的長度(SD1)對應於長期變異性的程度，而寬度(SD2)表示短期變異性[3]。
 
 圖中可看到一個正常人ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
+
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
 
 ## Distribution of number of clusters of normal people's Poincare plot
 正常人的 Poincaré plot 群數大多較少。
+
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Clusters%20of%20normal.png)
 
 ## Distribution of number of clusters of AFib patients' Poincare plot 
  AFib病人的Poincaré plot 群數明顯偏多。
+ 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/Cluster%20of%20AFib%20patients.png)
 
 ## Poincaré plot of an AFib patient
 圖中可看到一個AFib病患ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
+
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
+
 ## Performance of SVM on feature values 
-依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM。
+依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM，見下圖。
+![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/%E5%8E%9F%E8%AB%96%E6%96%87_%E5%9C%96%E7%89%87.png)
 
 但kmeans分群(而且是兩次)很容易受到雜訊影響，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot分群計算結果的解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
 
 基於特徵工程之後的features若直接使用kernel SVM學習，容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小。
+
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
+
 ## Performance of CatBoostClassifier on feature values
-為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
+基於上一章節的討論，為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
 如此一來，不需要使用kmeans及資料分流，也能達到略差的準確度84%(論文91.4%)及相當接近的特異度90%(論文92.9%)。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
