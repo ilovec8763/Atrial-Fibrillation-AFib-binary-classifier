@@ -5,10 +5,10 @@
 這個專案引用了這篇論文[1]的特徵工程方法，並根據實際情況做出了一定幅度的修改，目的在於增加分類器的穩健性(Robustness)及可解釋性(Interpretability)。
 
 演算流程:
-1. 將每一段長達30分鐘的ECG做預處理、透過neurokit內建的peak dection algorithm取得它的心律變異性(Heart rate variability, HRV)。
+1. 將每一段長達30分鐘的ECG做預處理、透過neurokit內建的peak detection algorithm取得它的心律變異性(Heart rate variability, HRV)。
 2. 將HRV畫成Poincare plot可以看見清晰的分群。
 3. 使用DBSCAN分群算法計算分群數量(群的尺度大小參考自[2])，另外再計算Poincare plot的統計量，獲得4 dimensions featue values。
-4. 透過CatBoostClassfier 對 featue values做ensemble learning。 
+4. 透過CatBoostClassfier 對 feature values做ensemble learning。 
 
 # Dataset
 我在這裡使用PAF Prediction Challenge Database ，這是一個由Computing in Cardiology conference 為了其2001發起的挑戰而構建的database，這個挑戰的目標是開發預測陣發性心房顫動 (PAF) 的自動化方法。
