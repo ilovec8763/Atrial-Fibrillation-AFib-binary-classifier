@@ -86,7 +86,7 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 
 但kmeans分群很容易受雜訊影響、無法排除噪音，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果。此外Poincaré plot用kmeans分群的計算結果解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
 
-在更換r-peaks detection的演算法之後，基於特徵工程之後的features若直接使用kernel SVM學習，就容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小、雜訊影響的效果明顯。
+這裡可以發現在更換r-peaks detection的演算法之後，基於特徵工程之後的features若直接使用kernel SVM學習，就容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小、雜訊影響的效果此時被凸顯了。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
