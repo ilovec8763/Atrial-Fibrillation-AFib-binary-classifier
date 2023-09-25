@@ -74,7 +74,7 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
 
-下圖除了深藍色的雜訊之外，可以清楚看出患者的clusters群數為5群。
+下圖除了深藍色的雜訊之外，可以清楚看出此患者的clusters群數為5群。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
 
 ## Performance of SVM on feature values 
