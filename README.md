@@ -55,6 +55,8 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 圖中可看到一個正常人ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal.png)
+
+可以看到下圖有三種顏色的點，其中水藍色跟紫色在DBSCAN算法下自成一群(共兩群)，深藍色的部分代表不計入群數裡面的雜訊。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_normal_colored.png)
 
 ## Distribution of number of clusters of normal people's Poincare plot
@@ -71,6 +73,8 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 圖中可看到一個AFib病患ECG的Poincaré plot，以及用DBSCAN分群上色後的Poincaré plot。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib.png)
+
+下圖除了深藍色的雜訊之外，可以清楚看出患者的clusters群數為5群。
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/poincare_plot_AFib_colored.png)
 
 ## Performance of SVM on feature values 
