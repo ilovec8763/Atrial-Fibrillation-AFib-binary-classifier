@@ -84,15 +84,15 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 
 ![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/%E5%8E%9F%E8%AB%96%E6%96%87_%E5%9C%96%E7%89%87.png)
 
-但kmeans分群很容易受到雜訊影響，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果，且Poincaré plot用kmeans分群的計算結果解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
+但kmeans分群很容易受雜訊影響、無法排除噪音，特別是當peak detection 演算法若沒有經過特別挑選，很難重現論文的結果。此外Poincaré plot用kmeans分群的計算結果解釋性較弱，整體缺乏魯棒性，對於容易產生artifacts的攜帶裝置而言可能較為不利。
 
-基於特徵工程之後的features若直接使用kernel SVM學習，容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小。
+在更換r-peaks detection的演算法之後，基於特徵工程之後的features若直接使用kernel SVM學習，就容易發生overfiting (仿照論文作法，參數用gridsearch 計算最佳參數)，此乃歸因於資料集太小、雜訊影響的效果明顯。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20cm.png)
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/SVM%20learning%20curve.png)
 
 ## Performance of CatBoostClassifier on feature values
-基於上一章節的討論，為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
+基於上一章節的討論，為改進實驗結果，使用DBSCAN作為計算Poincaré plot群數量的算法過濾掉雜訊以提升準確度，並且使用tree based algorithm的ensemble learning以提升函數的非線性以及避免overfit。
 如此一來，不需要使用kmeans及資料分流，也能達到略差的準確度84%(論文91.4%)及相當接近的特異度90%(論文92.9%)。
 
 ![alt text](https://github.com/ilovec8763/Physiological-Signal-Processing-/blob/master/CatBoost_Learning_Curve.png)
