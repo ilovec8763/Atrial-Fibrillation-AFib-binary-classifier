@@ -3,6 +3,7 @@
 # Abstract:
 
 這個專案引用了這篇論文[1]的特徵工程方法，並根據實際情況做出了一定幅度的修改，目的在於增加分類器的穩健性(Robustness)及可解釋性(Interpretability)。
+這裡使用Neurokit 2 作為資料清理和R-peak提取的程式庫，並且嘗試以其預設的peak detection方法取代原論文[4]使用的方法，看是否也能夠達到接近論文聲稱的水準(Sensitivity 91.4% , Specificity 92.9%)。
 
 演算流程:
 1. 將每一段長達30分鐘的ECG做預處理、透過neurokit內建的peak detection algorithm取得它的心律變異性(Heart rate variability, HRV)。
@@ -106,3 +107,7 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 [2] Käsmacher, H., Wiese, S., & Lahl, M. (2000). Monitoring the complexity of ventricular response in atrial fibrillation. Discrete Dynamics In Nature And Society, 4, 63-75.
 
 [3] Khandoker, A. H., Karmakar, C., Brennan, M., Palaniswami, M., & Voss, A. (2013). Poincaré plot methods for heart rate variability analysis. Boston, MA, USA: Springer US.
+
+[4] Park, J. (2007). Analysis of Heart Beat Irregularity for Atrial Fibrillation by Wavelet Method of QRS Complex Detection. Master's thesis.
+
+[5] Brammer, J. C. (2020). Biopeaks: A graphical user interface for feature extraction from heart-and breathing biosignals. Journal of Open Source Software, 5(54), 2621.
