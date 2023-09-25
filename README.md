@@ -3,7 +3,7 @@
 # Abstract:
 
 這個專案引用了這篇論文[1]的特徵工程方法，並根據實際情況做出了一定幅度的修改，目的在於增加分類器的穩健性(Robustness)及可解釋性(Interpretability)。
-這裡使用Neurokit 2 作為資料清理和R-peak提取的程式庫，並且嘗試以其預設的peak detection方法取代原論文[4]使用的方法，看是否也能夠達到接近論文聲稱的水準(Sensitivity 91.4% , Specificity 92.9%)。
+這裡使用Neurokit 2 作為資料清理和R-peak提取的程式庫，並且嘗試以其預設的peak detection方法[5]取代原論文[4]使用的方法，看是否也能夠達到接近論文聲稱的水準(Sensitivity 91.4% , Specificity 92.9%)。
 
 演算流程:
 1. 將每一段長達30分鐘的ECG做預處理、透過neurokit內建的peak detection algorithm取得它的心律變異性(Heart rate variability, HRV)。
