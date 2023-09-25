@@ -81,8 +81,8 @@ Poincaré plot 是一種將RR間隔（心臟跳動間的時間間隔）與下一
 ## Performance of SVM on feature values 
 依照原作論文作者的算法，先用kmeans計算Poincaré plot的群數量，再用dispresion和stepping作為feature，使用kmeans分成上下兩群，將正常與病態ECG做分流之後再做SVM。
 
-詳細一點來說，原論文作者使用Poincaré plot的簇數作為判定正常pattern存在與否的依據，但是原本peak detection的方法也會有peak抓取錯誤的問題。
-為解決這個問題，作者使用k-means聚類獲得簇數的參考標準。將簇數的分佈分為兩部分，計算下部的平均值。當測試資料的簇數大於平均值時，就標記其節拍間隔有錯誤。若在龐加萊圖中的簇數在特定範圍內，就將測試資料歸為非 AFib。若簇數過少或過多，就改為使用Stepping和Dispersion兩個特徵度量嘗試區分 AFib 和非 AFib，採用支援向量機方法做學習。此方法能夠大幅減低peak抓取錯誤帶來的影響，但缺點就是較為繁瑣，不利於計算穩健性，故我們在此嘗試將資料分流的步驟直接省卻，改成直接對三個特徵進行學習。
+詳細一點來說，原論文作者發現正常案例的簇數應當只會有一群(視作有pattern)，因此使用Poincaré plot的簇數作為判定正常pattern存在與否的依據(簇數 = 1正常, 簇數 >1 不正常)，但是原本peak detection的方法也會有peak抓取錯誤的問題，無法用理想上的臨界值1作為標準[1]。
+為解決這個問題，作者[1]使用k-means聚類獲得簇數的參考標準。將簇數的分佈分為兩部分，計算下部的平均值。當測試資料的簇數大於平均值時，就標記其節拍間隔有錯誤。若在龐加萊圖中的簇數在特定範圍內，就將測試資料歸為非 AFib。若簇數過少或過多，就改為使用Stepping和Dispersion兩個特徵度量嘗試區分 AFib 和非 AFib，並採用支援向量機方法做學習。此方法能夠減低peak抓取錯誤帶來的影響，但缺點就是較為繁瑣且結果難以解釋，不利於計算穩健性，故我們在此嘗試將資料分流的步驟直接省卻，改成直接對三個特徵進行學習，並且使用ensemble 的 tree-based method 在增加非線性的同時，也盡可能避免掉因維度增加而overfit的副作用。
 
 下圖是原作[1]判定AFib案例和正常案例的流程:
 ![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/Park%2C%20J.%20Lee%2C%20S.%20and%20Jeon%2C%20M_2009_Fig8.png)
