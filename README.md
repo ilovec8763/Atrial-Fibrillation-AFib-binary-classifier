@@ -12,7 +12,7 @@
 4. 透過CatBoostClassfier 對 feature values做ensemble learning。
 
 資料流程架構 :
-![alt text]([https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/Data%20Flow%20Diagram%2C%20DFD.png](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/Flow.png))
+![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/Flow.png)
 
 主要函式依賴性 :
 ![alt text](https://github.com/ilovec8763/Atrial-Fibrillation-AFib-binary-classifier/blob/master/Dependency_of_functions.png)
